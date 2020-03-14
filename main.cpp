@@ -3,8 +3,8 @@
 #include <math.h>
 #include <stdlib.h>
 
-static float rotXZ = 0.0;
-static float rotXY = 0.0;
+static float rotateXZ = 0.0;
+static float rotateXY = 0.0;
 static float zoom = 0.0;
 
 static float posX = 0.0;
@@ -32,13 +32,13 @@ static void display(void)
     glLoadIdentity();
     glTranslatef(0.0f, 0.0f, -10.5f);
 
-    gluLookAt(posX, posY, posZ,
-              viewX + cos(rotXZ * M_PI / 180), viewY, viewZ + sin(rotXZ * M_PI / 180),
-              upX + cos(rotXY * M_PI / 180), upY + sin(rotXY * M_PI / 180), upZ);
+   // gluLookAt(posX, posY, posZ,
+     //         viewX + cos(rotateXZ * M_PI / 180), viewY, viewZ + sin(rotateXZ * M_PI / 180),
+       //       upX + cos(rotateXY * M_PI / 180), upY + sin(rotateXY * M_PI / 180), upZ);
 
     glScalef(1.0 + zoom, 1.0 + zoom, 1.0 + zoom);
 
-  glBegin(GL_QUADS);        // Draw The Cube Using quads
+    glBegin(GL_QUADS);        // Draw The Cube Using quads
     glColor3f(0.0f,1.0f,0.0f);    // Color Blue
     glVertex3f( 1.0f, 1.0f,-1.0f);    // Top Right Of The Quad (Top)
     glVertex3f(-1.0f, 1.0f,-1.0f);    // Top Left Of The Quad (Top)
@@ -84,28 +84,28 @@ static void key(unsigned char key, int x, int y)
             exit(0);
             break;
         case 'w':
-            rotXY+=5;
+            rotateXY+=5;
             upY = 0;
             break;
         case 's':
-            rotXY-=5;
+            rotateXY-=5;
             upY = 0;
             break;
         case 'a':
-            rotXZ+=5;
+            rotateXZ+=5;
             break;
         case 'd':
-            rotXZ-=5;
+            rotateXZ-=5;
             break;
-        case 'z':
-            zoom+=0.1;
-            break;
-        case 'x':
-            zoom-=0.1;
-            break;
+//        case 'z':
+  //          zoom+=0.1;
+    //        break;
+      //  case 'x':
+        //    zoom-=0.1;
+          //  break;
         case 'r':
-            rotXZ = 0;
-            rotXY = 0;
+            rotateXZ = 0;
+            rotateXY = 0;
             zoom = 0;
             upY = 1;
             break;
@@ -120,7 +120,7 @@ static void resize (int w, int h)
    glViewport (0, 0, (GLsizei) w, (GLsizei) h);
    glMatrixMode (GL_PROJECTION);
    glLoadIdentity ();
-   glFrustum (-1.0, 1.0, -1.0, 1.0, 1.5, 20.0);
+   glFrustum (-1.0, 1.0, -1.0, 1.0, 2.0, 20.0);
    glMatrixMode (GL_MODELVIEW);
 }
 
