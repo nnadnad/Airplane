@@ -1,132 +1,127 @@
-/*
- * Airplnae
- *
- * WW1 Plane using OpenGl
- * By :
- * 1. VB
- * 2. Hansen
- * 3. Valent
- */
 
-#ifdef __APPLE__
-#include <GLUT/glut.h>
-#else
 #include <GL/glut.h>
-#endif
-
-#include <stdlib.h>
 #include <math.h>
 #include <stdlib.h>
 
-static int slices = 16;
-static int stacks = 16;
+static float rotXZ = 0.0;
+static float rotXY = 0.0;
+static float zoom = 0.0;
 
+static float posX = 0.0;
+static float posY = 0.0;
+static float posZ = 0.0; //radius;
 
+static float viewX = 0.0;
+static float viewY = 0.0;
+static float viewZ = 0.0;
 
-// Constanta and Variable
-const GLfloat light_ambient[]  = { 0.0f, 0.0f, 0.0f, 1.0f };
-const GLfloat light_diffuse[]  = { 1.0f, 1.0f, 1.0f, 1.0f };
-const GLfloat light_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-const GLfloat light_position[] = { 2.0f, 5.0f, 5.0f, 0.0f };
+static float upX = 0.0;
+static float upY = 1.0;
+static float upZ = 0.0;
 
-const GLfloat mat_ambient[]    = { 0.7f, 0.7f, 0.7f, 1.0f };
-const GLfloat mat_diffuse[]    = { 0.8f, 0.8f, 0.8f, 1.0f };
-const GLfloat mat_specular[]   = { 1.0f, 1.0f, 1.0f, 1.0f };
-const GLfloat high_shininess[] = { 100.0f };
-
-/* GLUT callback Handlers */
-
-static void resize(int width, int height)
+static void init(void)
 {
-    const float ar = (float) width / (float) height;
-
-    glViewport(0, 0, width, height);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glFrustum(-ar, ar, -1.0, 1.0, 2.0, 100.0);
-
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity() ;
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glShadeModel(GL_FLAT);
 }
 
 static void display(void)
 {
-    const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
-    const double a = t*90.0;
-
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glColor3d(1,0,0);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    glTranslatef(0.0f, 0.0f, -10.5f);
 
-    glPushMatrix();
-        glTranslated(-2.4,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidSphere(1,slices,stacks);
-    glPopMatrix();
+    gluLookAt(posX, posY, posZ,
+              viewX + cos(rotXZ * M_PI / 180), viewY, viewZ + sin(rotXZ * M_PI / 180),
+              upX + cos(rotXY * M_PI / 180), upY + sin(rotXY * M_PI / 180), upZ);
 
-    glPushMatrix();
-        glTranslated(0,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidCone(1,1,slices,stacks);
-    glPopMatrix();
+    glScalef(1.0 + zoom, 1.0 + zoom, 1.0 + zoom);
 
-    glPushMatrix();
-        glTranslated(2.4,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidTorus(0.2,0.8,slices,stacks);
-    glPopMatrix();
+  glBegin(GL_QUADS);        // Draw The Cube Using quads
+    glColor3f(0.0f,1.0f,0.0f);    // Color Blue
+    glVertex3f( 1.0f, 1.0f,-1.0f);    // Top Right Of The Quad (Top)
+    glVertex3f(-1.0f, 1.0f,-1.0f);    // Top Left Of The Quad (Top)
+    glVertex3f(-1.0f, 1.0f, 1.0f);    // Bottom Left Of The Quad (Top)
+    glVertex3f( 1.0f, 1.0f, 1.0f);    // Bottom Right Of The Quad (Top)
+    glColor3f(1.0f,0.5f,0.0f);    // Color Orange
+    glVertex3f( 1.0f,-1.0f, 1.0f);    // Top Right Of The Quad (Bottom)
+    glVertex3f(-1.0f,-1.0f, 1.0f);    // Top Left Of The Quad (Bottom)
+    glVertex3f(-1.0f,-1.0f,-1.0f);    // Bottom Left Of The Quad (Bottom)
+    glVertex3f( 1.0f,-1.0f,-1.0f);    // Bottom Right Of The Quad (Bottom)
+    glColor3f(1.0f,0.0f,0.0f);    // Color Red
+    glVertex3f( 1.0f, 1.0f, 1.0f);    // Top Right Of The Quad (Front)
+    glVertex3f(-1.0f, 1.0f, 1.0f);    // Top Left Of The Quad (Front)
+    glVertex3f(-1.0f,-1.0f, 1.0f);    // Bottom Left Of The Quad (Front)
+    glVertex3f( 1.0f,-1.0f, 1.0f);    // Bottom Right Of The Quad (Front)
+    glColor3f(1.0f,1.0f,0.0f);    // Color Yellow
+    glVertex3f( 1.0f,-1.0f,-1.0f);    // Top Right Of The Quad (Back)
+    glVertex3f(-1.0f,-1.0f,-1.0f);    // Top Left Of The Quad (Back)
+    glVertex3f(-1.0f, 1.0f,-1.0f);    // Bottom Left Of The Quad (Back)
+    glVertex3f( 1.0f, 1.0f,-1.0f);    // Bottom Right Of The Quad (Back)
+    glColor3f(0.0f,0.0f,1.0f);    // Color Blue
+    glVertex3f(-1.0f, 1.0f, 1.0f);    // Top Right Of The Quad (Left)
+    glVertex3f(-1.0f, 1.0f,-1.0f);    // Top Left Of The Quad (Left)
+    glVertex3f(-1.0f,-1.0f,-1.0f);    // Bottom Left Of The Quad (Left)
+    glVertex3f(-1.0f,-1.0f, 1.0f);    // Bottom Right Of The Quad (Left)
+    glColor3f(1.0f,0.0f,1.0f);    // Color Violet
+    glVertex3f( 1.0f, 1.0f,-1.0f);    // Top Right Of The Quad (Right)
+    glVertex3f( 1.0f, 1.0f, 1.0f);    // Top Left Of The Quad (Right)
+    glVertex3f( 1.0f,-1.0f, 1.0f);    // Bottom Left Of The Quad (Right)
+    glVertex3f( 1.0f,-1.0f,-1.0f);    // Bottom Right Of The Quad (Right)
 
-    glPushMatrix();
-        glTranslated(-2.4,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireSphere(1,slices,stacks);
-    glPopMatrix();
+    glEnd();
 
-    glPushMatrix();
-        glTranslated(0,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireCone(1,1,slices,stacks);
-    glPopMatrix();
-
-    glPushMatrix();
-        glTranslated(2.4,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireTorus(0.2,0.8,slices,stacks);
-    glPopMatrix();
-
+    glFlush();
     glutSwapBuffers();
 }
-
 
 static void key(unsigned char key, int x, int y)
 {
     switch (key)
     {
-        case 27 :
         case 'q':
             exit(0);
             break;
-
-        case '+':
-            slices++;
-            stacks++;
+        case 'w':
+            rotXY+=5;
+            upY = 0;
+            break;
+        case 's':
+            rotXY-=5;
+            upY = 0;
+            break;
+        case 'a':
+            rotXZ+=5;
+            break;
+        case 'd':
+            rotXZ-=5;
+            break;
+        case 'z':
+            zoom+=0.1;
+            break;
+        case 'x':
+            zoom-=0.1;
+            break;
+        case 'r':
+            rotXZ = 0;
+            rotXY = 0;
+            zoom = 0;
+            upY = 1;
             break;
 
-        case '-':
-            if (slices>3 && stacks>3)
-            {
-                slices--;
-                stacks--;
-            }
-            break;
     }
 
     glutPostRedisplay();
+}
+
+static void resize (int w, int h)
+{
+   glViewport (0, 0, (GLsizei) w, (GLsizei) h);
+   glMatrixMode (GL_PROJECTION);
+   glLoadIdentity ();
+   glFrustum (-1.0, 1.0, -1.0, 1.0, 1.5, 20.0);
+   glMatrixMode (GL_MODELVIEW);
 }
 
 static void idle(void)
@@ -134,50 +129,24 @@ static void idle(void)
     glutPostRedisplay();
 }
 
-
-static void init() {
-    glClearColor(184.0f/255.0f, 213.0f/255.0f, 238.0f/255.0f, 1.0f);
-    glShadeModel(GL_FLAT)
-}
 /* Program entry point */
 
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
-    glutInitWindowSize(640,480);
-    glutInitWindowPosition(10,10);
+    glutInitWindowSize(640,640);
+    glutInitWindowPosition(0,0);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 
     glutCreateWindow("Airplane");
+    init();
 
-    glutReshapeFunc(resize);
     glutDisplayFunc(display);
+    glutReshapeFunc(resize);
     glutKeyboardFunc(key);
     glutIdleFunc(idle);
 
-    glClearColor(1,1,1,1);
-    glEnable(GL_CULL_FACE);
-    glCullFace(GL_BACK);
-
-    glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LESS);
-
-    glEnable(GL_LIGHT0);
-    glEnable(GL_NORMALIZE);
-    glEnable(GL_COLOR_MATERIAL);
-    glEnable(GL_LIGHTING);
-
-    glLightfv(GL_LIGHT0, GL_AMBIENT,  light_ambient);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE,  light_diffuse);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
-    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
-
-    glMaterialfv(GL_FRONT, GL_AMBIENT,   mat_ambient);
-    glMaterialfv(GL_FRONT, GL_DIFFUSE,   mat_diffuse);
-    glMaterialfv(GL_FRONT, GL_SPECULAR,  mat_specular);
-    glMaterialfv(GL_FRONT, GL_SHININESS, high_shininess);
-
     glutMainLoop();
 
-    return EXIT_SUCCESS;
+    return 0;
 }
