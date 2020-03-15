@@ -9,6 +9,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "glm/glm/glm.hpp"
+
 static float rotateXZ = 0.0;
 static float rotateXY = 0.0;
 static float zoom = 0.0;
