@@ -49,85 +49,66 @@ static void display(void)
 
     glScalef(1.0 + zoom, 1.0 + zoom, 1.0 + zoom);
 
-
-    /*sayap bawah*/
-
+    //body pesawat di koordinat 0 Z
     glBegin(GL_POLYGON);
-    glColor3f(0.0f,0.0f,1.0f);    // Color Blue
+    glColor3f(1, 0, 0);
+    glVertex3f( 1.0, 0.2, 0);
+    glVertex3f( 1.0, -0.2, 0);
+    glVertex3f( 0.9, -0.25, 0);
     glVertex3f( 0.6, -0.3, 0);
-    glVertex3f( 0.3, -0.31, 0);
-    glVertex3f( 0.3, -0.31, 1);
-    glVertex3f( 0.6, -0.3, 1);
+    glVertex3f( -0.8, -0.35, 0);
+    glVertex3f( -0.9, -0.25, 0);
     glEnd();
 
+    //body pesawat di koordinat -0.2 Z
     glBegin(GL_POLYGON);
-    glColor3f(0.0f,0.0f,1.0f);    // Color Blue
-    glVertex3f( 0.6, -0.27, 0);
-    glVertex3f( 0.3, -0.29, 0);
-    glVertex3f( 0.3, -0.31, 1);
-    glVertex3f( 0.6, -0.3, 1);
-
+    glColor3f(0,100,0);
+    glVertex3f( 1.0, 0.2, -0.2);
+    glVertex3f( 1.0, -0.2, -0.2);
+    glVertex3f( 0.9, -0.25, -0.2);
+    glVertex3f( 0.6, -0.3, -0.2);
+    glVertex3f( -0.8, -0.35, -0.2);
+    glVertex3f( -0.9, -0.25, -0.2);
     glEnd();
 
+    //body pesawat penampang baling2
     glBegin(GL_POLYGON);
-    glColor3f(0.0f,0.0f,1.0f);    // Color Blue
-    glVertex3f( 0.6, -0.3,-0.2);
-    glVertex3f( 0.3, -0.31, -0.2);
-    glVertex3f( 0.3, -0.31, -1.2);
-    glVertex3f( 0.6, -0.3, -1.2);
+    glColor3f(0,0,0);
+    glVertex3f( 1.0, 0.2, 0);
+    glVertex3f( 1.0, 0.2, -0.2);
+    glVertex3f( 1.0, -0.2, -0.2);
+    glVertex3f( 1.0, -0.2, 0);
     glEnd();
 
+    //body pesawat bagian atas
     glBegin(GL_POLYGON);
-    glColor3f(0.0f,0.0f,1.0f);    // Color Blue
-    glVertex3f( 0.6, -0.27, -0.2);
-    glVertex3f( 0.3, -0.29, -0.2);
-    glVertex3f( 0.3, -0.31, -1.2);
-    glVertex3f( 0.6, -0.3, -1.2);
-
+    glColor3f(1,0.5,0);
+    glVertex3f( 1.0, 0.2, 0);
+    glVertex3f( 1.0, 0.2, -0.2);
+    glVertex3f( -0.9, -0.25, -0.2);
+    glVertex3f( -0.9, -0.25, 0);
     glEnd();
 
-    /*sayap atas*/
-
+    //body pesawat bagian atas belakang
     glBegin(GL_POLYGON);
-    glColor3f(0.0f,0.0f,1.0f);    // Color Blue
-    glVertex3f( 0.6, 0.3, 0);
-    glVertex3f( 0.3, 0.29, 0);
-    glVertex3f( 0.3, 0.29, 1);
-    glVertex3f( 0.6, 0.3, 1);
+    glColor3f(1,0.5,0);
+    glVertex3f( -0.9, -0.25, -0.2);
+    glVertex3f( -0.9, -0.25, 0);
+    glVertex3f( -0.8, -0.35, -0.2);
+    glVertex3f( -0.8, -0.35, 0);
     glEnd();
 
+    //body pesawat bagian bawah
     glBegin(GL_POLYGON);
-    glColor3f(0.0f,0.0f,1.0f);    // Color Blue
-    glVertex3f( 0.6, 0.33, 0);
-    glVertex3f( 0.3, 0.29, 0);
-    glVertex3f( 0.3, 0.29, 1);
-    glVertex3f( 0.6, 0.30, 1);
-
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glColor3f(0.0f,0.0f,1.0f);    // Color Blue
-    glVertex3f( 0.6, 0.3,-0.2);
-    glVertex3f( 0.3, 0.29, -0.2);
-    glVertex3f( 0.3, 0.29, -1.2);
-    glVertex3f( 0.6, 0.3, -1.2);
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glColor3f(0.0f,0.0f,1.0f);    // Color Blue
-    glVertex3f( 0.6, 0.33, -0.2);
-    glVertex3f( 0.3, 0.29, -0.2);
-    glVertex3f( 0.3, 0.31, -1.2);
-    glVertex3f( 0.6, 0.3, -1.2);
-
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    glColor3f(0.0f,0.0f,1.0f);    // Color Blue
-    glVertex3f( 0.6, 0.33, -0.2);
-    glVertex3f( 0.3, 0.29, -0.2);
-    glVertex3f( 0.3, 0.29, 0);
-    glVertex3f( 0.6, 0.33, 0);
+    glColor3f(1,0.5,0);
+    glVertex3f( -0.8, -0.35, -0.2);
+    glVertex3f( -0.8, -0.35, 0);
+    glVertex3f( 0.6, -0.3, 0);
+    glVertex3f( 0.9, -0.25, 0);
+    glVertex3f( 1, -0.2, 0);
+    glVertex3f( 1, -0.2, -0.2);
+    glVertex3f( 0.9, -0.25, -0.2);
+    glVertex3f( 0.6, -0.3, -0.2);
 
     glEnd();
 
@@ -156,12 +137,12 @@ static void key(unsigned char key, int x, int y)
         case 'd':
             rotateXZ-=10;
             break;
-//        case 'z':
-  //          zoom+=0.1;
-    //        break;
-      //  case 'x':
-        //    zoom-=0.1;
-          //  break;
+        case 'z':
+            zoom+=0.1;
+            break;
+        case 'x':
+            zoom-=0.1;
+            break;
         case 'r':
             rotateXZ = 0;
             rotateXY = 0;
