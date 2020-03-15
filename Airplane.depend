@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1584254796 source:/Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/main.cpp
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+

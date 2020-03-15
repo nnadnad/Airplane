@@ -1,0 +1,7 @@
+*~
+**/*.o
+.vscode
+**/main
+.idea/
+*.mesh
+.DS_Store
