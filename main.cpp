@@ -2,6 +2,7 @@
 #define GL_SILENCE_DEPRECATION
 #include "2.1.0_1/include/GL/glew.h"
 #include <GLUT/glut.h>
+#include "Camera.h"
 #else
 #include "2.1.0_1/include/GL/glew.h"
 #include <GL/glut.h>
@@ -13,6 +14,9 @@
 
 #include "glm/glm/glm.hpp"
 #include "3.3.2/include/GLFW/glfw3.h"
+
+const GLuint WIDTH = 800, HEIGHT = 600;
+int SCREEN_WIDTH, SCREEN_HEIGHT;
 
 static float rotateXZ = 0.0;
 static float rotateXY = 0.0;
@@ -30,6 +34,16 @@ static float upX = 0.0;
 static float upY = 1.0;
 static float upZ = 0.0;
 
+// Camera
+Camera  camera(glm::vec3( 0.0f, 0.0f, 3.0f ) );
+GLfloat lastX = WIDTH / 2.0;
+GLfloat lastY = HEIGHT / 2.0;
+bool keys[1024];
+bool firstMouse = true;
+
+GLfloat deltaTime = 0.0f;
+GLfloat lastFrame = 0.0f;
+
 static void init(void)
 {
     glClearColor(1.0, 1.0, 1.0, 1.0);
@@ -43,9 +57,13 @@ static void display(void)
     glLoadIdentity();
     glTranslatef(0.0f, 0.0f, -10.5f);
 
-    gluLookAt(posX, posY, posZ,
-             viewX + cos(rotateXZ * M_PI / 180), viewY, viewZ + sin(rotateXZ * M_PI / 180),
-              upX + cos(rotateXY * M_PI / 180), upY + sin(rotateXY * M_PI / 180), upZ);
+    // Create camera transformation
+    glm::mat4 view;
+    view = camera.GetViewMatrix( );
+
+    // gluLookAt(posX, posY, posZ,
+    //           viewX + cos(rotateXZ * M_PI / 180), viewY, viewZ + sin(rotateXZ * M_PI / 180),
+    //           upX + cos(rotateXY * M_PI / 180), upY + sin(rotateXY * M_PI / 180), upZ);
 
     glScalef(1.0 + zoom, 1.0 + zoom, 1.0 + zoom);
 
