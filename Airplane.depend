@@ -10,9 +10,10 @@
 	"glm/glm/glm.hpp"
 	"3.3.2/include/GLFW/glfw3.h"
 
-1584262523 source:c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\main.cpp
+1584273743 source:c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\main.cpp
 	"2.1.0_1/include/GL/glew.h"
 	<GLUT/glut.h>
+	"Camera.h"
 	"2.1.0_1/include/GL/glew.h"
 	<GL/glut.h>
 	<math.h>
@@ -1610,4 +1611,64 @@
 	<GL/gl.h>
 	<GL/glext.h>
 	<GL/glu.h>
+
+1584273743 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\camera.h
+	<vector>
+	"2.1.0_1/include/GL/glew.h"
+	"glm/glm/glm.hpp"
+	"glm/glm/gtc/matrix_transform.hpp"
+
+1584258799 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\glm\glm\gtc\matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../ext/matrix_projection.hpp"
+	"../ext/matrix_clip_space.hpp"
+	"../ext/matrix_transform.hpp"
+	"matrix_transform.inl"
+
+1584258797 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\glm\glm\ext\matrix_projection.hpp
+	"../gtc/constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+	"matrix_projection.inl"
+
+1584258799 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\glm\glm\gtc\constants.hpp
+	"../ext/scalar_constants.hpp"
+	"constants.inl"
+
+1584258797 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\glm\glm\ext\scalar_constants.hpp
+	"../detail/setup.hpp"
+	"scalar_constants.inl"
+
+1584258797 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\glm\glm\ext\scalar_constants.inl
+	<limits>
+
+1584258799 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\glm\glm\gtc\constants.inl
+
+1584258797 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\glm\glm\ext\matrix_projection.inl
+
+1584258797 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\glm\glm\ext\matrix_clip_space.hpp
+	"../ext/scalar_constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"matrix_clip_space.inl"
+
+1584258797 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\glm\glm\ext\matrix_clip_space.inl
+
+1584258797 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\glm\glm\ext\matrix_transform.hpp
+	"../gtc/constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+	"matrix_transform.inl"
+
+1584258797 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\glm\glm\ext\matrix_transform.inl
+
+1584258799 c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\glm\glm\gtc\matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
 
