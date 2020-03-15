@@ -2,6 +2,7 @@
 #include <GL/glut.h>
 #include <math.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 static float rotateXZ = 0.0;
 static float rotateXY = 0.0;
@@ -32,9 +33,9 @@ static void display(void)
     glLoadIdentity();
     glTranslatef(0.0f, 0.0f, -10.5f);
 
-   // gluLookAt(posX, posY, posZ,
-     //         viewX + cos(rotateXZ * M_PI / 180), viewY, viewZ + sin(rotateXZ * M_PI / 180),
-       //       upX + cos(rotateXY * M_PI / 180), upY + sin(rotateXY * M_PI / 180), upZ);
+    gluLookAt(posX, posY, posZ,
+              viewX + cos(rotateXZ * M_PI / 180), viewY, viewZ + sin(rotateXZ * M_PI / 180),
+              upX + cos(rotateXY * M_PI / 180), upY + sin(rotateXY * M_PI / 180), upZ);
 
     glScalef(1.0 + zoom, 1.0 + zoom, 1.0 + zoom);
 
@@ -84,18 +85,18 @@ static void key(unsigned char key, int x, int y)
             exit(0);
             break;
         case 'w':
-            rotateXY+=5;
+            rotateXY+=10;
             upY = 0;
             break;
         case 's':
-            rotateXY-=5;
+            rotateXY-=10;
             upY = 0;
             break;
         case 'a':
-            rotateXZ+=5;
+            rotateXZ+=10;
             break;
         case 'd':
-            rotateXZ-=5;
+            rotateXZ-=10;
             break;
 //        case 'z':
   //          zoom+=0.1;
