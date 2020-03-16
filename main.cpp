@@ -20,23 +20,23 @@ using namespace std;
 
 void printHelp()
 {
-    std::cout << "      Airplane Model with GLUT OpenGL      " << std::endl
-              << "___________________________________________" << std::endl
-              << "|       |                                 |" << std::endl
-              << "|   q   |   exit                          |" << std::endl
-              << "|   r   |   reset default view            |" << std::endl
-              << "|   w   |   rotate model right (Z-axis)   |" << std::endl
-              << "|   a   |   rotate model left (Y-axis)    |" << std::endl
-              << "|   s   |   rotate model left (Z-axis)    |" << std::endl
-              << "|   d   |   rotate model right (Y-axis)   |" << std::endl
-              << "|   z   |   zoom in                       |" << std::endl
-              << "|   x   |   zoom out                      |" << std::endl
-              << "|   ↑   |   move camera closer            |" << std::endl
-              << "|   ←   |   move camera left              |" << std::endl
-              << "|   ↓   |   move camera away              |" << std::endl
-              << "|   →   |   move camera right             |" << std::endl
-              << "|_______|_________________________________|" << std::endl
-              << std::endl;
+    cout << "      Airplane Model with GLUT OpenGL      " << endl
+              << "___________________________________________" << endl
+              << "|       |                                 |" << endl
+              << "|   q   |   exit                          |" << endl
+              << "|   r   |   reset default view            |" << endl
+              << "|   w   |   rotate model right (Z-axis)   |" << endl
+              << "|   a   |   rotate model left (Y-axis)    |" << endl
+              << "|   s   |   rotate model left (Z-axis)    |" << endl
+              << "|   d   |   rotate model right (Y-axis)   |" << endl
+              << "|   z   |   zoom in                       |" << endl
+              << "|   x   |   zoom out                      |" << endl
+              << "|   ↑   |   move camera closer            |" << endl
+              << "|   ←   |   move camera left              |" << endl
+              << "|   ↓   |   move camera away              |" << endl
+              << "|   →   |   move camera right             |" << endl
+              << "|_______|_________________________________|" << endl
+              << endl;
 }
 
 int main(int argc, char *argv[])
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
         {
             printHelp()
         } else {
-            std::cout << "Unknown arguments detected" << std::endl
+            cout << "Unknown arguments detected" << endl
         }
     } else {
         glutInit(&argc, argv);
