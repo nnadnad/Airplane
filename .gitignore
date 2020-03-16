@@ -6,4 +6,3 @@
 *.mesh
 .DS_Store
 *.cbp
-obj/Debug/main.o
