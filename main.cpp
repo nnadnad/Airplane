@@ -62,7 +62,7 @@ static void display(void)
 
     //body pesawat di koordinat -0.2 Z
     glBegin(GL_POLYGON);
-    glColor3f(0,100,0);
+    glColor3f(0.0,1.0,1.0);
     glVertex3f( 1.0, 0.2, -0.2);
     glVertex3f( 1.0, -0.2, -0.2);
     glVertex3f( 0.9, -0.25, -0.2);
@@ -127,6 +127,29 @@ static void display(void)
     glVertex3f(-1.2, -0.05, 0.2);
     glVertex3f(-0.8, -0.05, 0.2);
     glVertex3f(-0.8, -0.05, -0.4);
+    glEnd();
+
+
+    //baling" vertikal
+    glBegin(GL_POLYGON);
+    glColor3f(0.3, 0.3,0.3);
+    for (int i=0; i < 50; i++){
+        glVertex3f(1+i*0.001, 0.35, -0.075);
+        glVertex3f(1+i*0.001, 0.35, -0.125);
+        glVertex3f(1+i*0.001, -0.35, -0.075);
+        glVertex3f(1+i*0.001, -0.35, -0.125);
+    }
+    glEnd();
+
+    //baling" horizontal
+    glBegin(GL_POLYGON);
+    glColor3f(0.3, 0.3,0.3);
+    for (int i=0; i < 50; i++){
+        glVertex3f(1+i*0.001, 0.025, 0.25);
+        glVertex3f(1+i*0.001, 0.025, -0.45);
+        glVertex3f(1+i*0.001, -0.025, -0.45);
+        glVertex3f(1+i*0.001, -0.025, 0.25);
+    }
     glEnd();
 
     glFlush();
