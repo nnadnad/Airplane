@@ -134,10 +134,10 @@ static void display(void)
     glBegin(GL_POLYGON);
     glColor3f(0.3, 0.3,0.3);
     for (int i=0; i < 50; i++){
-        glVertex3f(1+i*0.001, 0.35, -0.075);
-        glVertex3f(1+i*0.001, 0.35, -0.125);
-        glVertex3f(1+i*0.001, -0.35, -0.075);
-        glVertex3f(1+i*0.001, -0.35, -0.125);
+        glVertex3f(1+i*0.001, 0.35, -0.080);
+        glVertex3f(1+i*0.001, 0.35, -0.130);
+        glVertex3f(1+i*0.001, -0.35, -0.080);
+        glVertex3f(1+i*0.001, -0.35, -0.130);
     }
     glEnd();
 
@@ -145,12 +145,14 @@ static void display(void)
     glBegin(GL_POLYGON);
     glColor3f(0.3, 0.3,0.3);
     for (int i=0; i < 50; i++){
-        glVertex3f(1+i*0.001, 0.025, 0.25);
-        glVertex3f(1+i*0.001, 0.025, -0.45);
-        glVertex3f(1+i*0.001, -0.025, -0.45);
-        glVertex3f(1+i*0.001, -0.025, 0.25);
+        glVertex3f(1+i*0.001, 0.025, 0.30);
+        glVertex3f(1+i*0.001, 0.025, -0.50);
+        glVertex3f(1+i*0.001, -0.025, -0.50);
+        glVertex3f(1+i*0.001, -0.025, 0.30);
     }
     glEnd();
+
+
 
     glFlush();
     glutSwapBuffers();
