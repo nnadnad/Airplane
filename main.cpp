@@ -21,22 +21,22 @@ using namespace std;
 void printHelp()
 {
     cout << "      Airplane Model with GLUT OpenGL      " << endl
-              << "___________________________________________" << endl
-              << "|       |                                 |" << endl
-              << "|   q   |   exit                          |" << endl
-              << "|   r   |   reset default view            |" << endl
-              << "|   w   |   rotate model right (Z-axis)   |" << endl
-              << "|   a   |   rotate model left (Y-axis)    |" << endl
-              << "|   s   |   rotate model left (Z-axis)    |" << endl
-              << "|   d   |   rotate model right (Y-axis)   |" << endl
-              << "|   z   |   zoom in                       |" << endl
-              << "|   x   |   zoom out                      |" << endl
-              << "|   ↑   |   move camera closer            |" << endl
-              << "|   ←   |   move camera left              |" << endl
-              << "|   ↓   |   move camera away              |" << endl
-              << "|   →   |   move camera right             |" << endl
-              << "|_______|_________________________________|" << endl
-              << endl;
+         << "___________________________________________" << endl
+         << "|       |                                 |" << endl
+         << "|   q   |   exit                          |" << endl
+         << "|   r   |   reset default view            |" << endl
+         << "|   w   |   rotate model right (Z-axis)   |" << endl
+         << "|   a   |   rotate model left (Y-axis)    |" << endl
+         << "|   s   |   rotate model left (Z-axis)    |" << endl
+         << "|   d   |   rotate model right (Y-axis)   |" << endl
+         << "|   z   |   zoom in                       |" << endl
+         << "|   x   |   zoom out                      |" << endl
+         << "|   ↑   |   move camera closer            |" << endl
+         << "|   ←   |   move camera left              |" << endl
+         << "|   ↓   |   move camera away              |" << endl
+         << "|   →   |   move camera right             |" << endl
+         << "|_______|_________________________________|" << endl
+         << endl;
 }
 
 int main(int argc, char *argv[])
