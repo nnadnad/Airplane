@@ -1,13 +1,14 @@
 # depslib dependency file v1.0
-1584275443 source:/Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/main.cpp
+1584340688 source:/Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/main.cpp
 	"2.1.0_1/include/GL/glew.h"
 	<GLUT/glut.h>
 	"2.1.0_1/include/GL/glew.h"
 	<GL/glut.h>
-	"Camera.h"
 	<math.h>
 	<stdlib.h>
 	<stdio.h>
+	<iostream>
+	"Camera.h"
 	"glm/glm/glm.hpp"
 	"3.3.2/include/GLFW/glfw3.h"
 

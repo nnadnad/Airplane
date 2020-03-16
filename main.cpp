@@ -60,14 +60,16 @@ static void display(void)
 
     // Create camera transformation
     glm::mat4 view;
-    view = camera.GetViewMatrix( );
+    view = camera.GetViewMatrix();
 
     // gluLookAt(posX, posY, posZ,
     //           viewX + cos(rotateXZ * M_PI / 180), viewY, viewZ + sin(rotateXZ * M_PI / 180),
     //           upX + cos(rotateXY * M_PI / 180), upY + sin(rotateXY * M_PI / 180), upZ);
 
+    glRotatef(posX, viewX + cos(rotateXZ * M_PI / 180), viewY, viewZ);
     glScalef(1.0 + zoom, 1.0 + zoom, 1.0 + zoom);
 
+//body
     //body pesawat di koordinat 0 Z
     glBegin(GL_POLYGON);
     glColor3f(1, 0, 0);
@@ -168,7 +170,6 @@ static void key(unsigned char key, int x, int y)
             zoom = 0;
             upY = 1;
             break;
-
     }
 
     glutPostRedisplay();
