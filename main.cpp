@@ -8,6 +8,10 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdarg.h>
+#include <iostream>
+#include <fstream>
+#include <string>
 
 #include "func.cpp"
 #include "model.cpp"
