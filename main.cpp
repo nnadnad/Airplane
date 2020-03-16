@@ -109,7 +109,24 @@ static void display(void)
     glVertex3f( 1, -0.2, -0.2);
     glVertex3f( 0.9, -0.25, -0.2);
     glVertex3f( 0.6, -0.3, -0.2);
+    glEnd();
 
+    //ekor vertikal pesawat
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0.5, 0);
+    glVertex3f(-1.2, 0.1, -0.2);
+    glVertex3f(-1.2, 0.1, 0);
+    glVertex3f(-0.8, -0.35, 0);
+    glVertex3f(-0.8, -0.35, -0.2);
+    glEnd();
+
+    //ekor horizontal pesawat
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0.5, 1);
+    glVertex3f(-1.2, -0.05, -0.4);
+    glVertex3f(-1.2, -0.05, 0.2);
+    glVertex3f(-0.8, -0.05, 0.2);
+    glVertex3f(-0.8, -0.05, -0.4);
     glEnd();
 
     glFlush();
