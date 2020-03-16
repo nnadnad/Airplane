@@ -25,9 +25,15 @@ static void key(unsigned char key, int x, int y)
         case 'x':
             zoom-=0.1;
             break;
+        case 'p':
+            rotatePro += 3;
+            upX = cos(22 / 7 * rotatePro / 180);
+            upZ = sin(22 / 7 * rotatePro / 180);
+            break;
         case 'r':
             rotateXZ = 0;
             rotateXY = 0;
+            rotatePro =0;
             viewX = 0;
             viewZ = 0;
             posX = 0;

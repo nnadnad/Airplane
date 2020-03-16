@@ -1,5 +1,6 @@
 static float rotateXZ = 0.0;
 static float rotateXY = 0.0;
+static float rotatePro = 0.0;
 static float zoom = 0.0;
 
 static float posX = 0.0f;

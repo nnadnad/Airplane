@@ -25,6 +25,7 @@ void printHelp()
          << "|       |                                 |" << endl
          << "|   q   |   exit                          |" << endl
          << "|   r   |   reset default view            |" << endl
+         << "|   e   |   rotate projection area        |" << endl
          << "|   w   |   rotate model right (Z-axis)   |" << endl
          << "|   a   |   rotate model left (Y-axis)    |" << endl
          << "|   s   |   rotate model left (Z-axis)    |" << endl
