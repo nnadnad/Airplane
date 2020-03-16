@@ -220,6 +220,14 @@ static void display(void)
 
     glBegin(GL_POLYGON);
     glColor3f(0.3,0.3,0.3);
+    glVertex3f(0.3,-0.3,0);
+    glVertex3f(0.325,-0.3,0);
+    glVertex3f(0.475,-0.5,0.2);
+    glVertex3f(0.45,-0.5,0.2);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.3,0.3,0.3);
     glVertex3f(0.3,-0.3,-0.2);
     glVertex3f(0.325,-0.3,-0.2);
     glVertex3f(0.475,-0.5,-0.4);
