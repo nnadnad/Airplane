@@ -218,6 +218,10 @@ static void key(unsigned char key, int x, int y)
         case 'r':
             rotateXZ = 0;
             rotateXY = 0;
+            viewX = 0;
+            viewZ = 0;
+            posX = 0;
+            posZ = 0;
             zoom = 0;
             upY = 1;
             break;
