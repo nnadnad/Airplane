@@ -6,13 +6,13 @@
 #else
 #include "2.1.0_1/include/GL/glew.h"
 #include <GL/glut.h>
-#include "Camera.h"
 #endif
 
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "Camera.h"
 #include "glm/glm/glm.hpp"
 #include "3.3.2/include/GLFW/glfw3.h"
 
