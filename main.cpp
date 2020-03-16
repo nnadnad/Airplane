@@ -18,17 +18,20 @@ static float rotateXZ = 0.0;
 static float rotateXY = 0.0;
 static float zoom = 0.0;
 
-static float posX = 0.0;
-static float posY = 0.0;
-static float posZ = 0.0; //radius;
+static float posX = 0.0f;
+static float posY = 0.0f;
+static float posZ = 0.0f; //radius;
 
-static float viewX = 0.0;
-static float viewY = 0.0;
-static float viewZ = 0.0;
+static float viewX = 0.0f;
+static float viewY = 0.0f;
+static float viewZ = 0.0f;
 
-static float upX = 0.0;
-static float upY = 1.0;
-static float upZ = 0.0;
+static float upX = 0.0f;
+static float upY = 1.0f;
+static float upZ = 0.0f;
+
+// angle of rotation for the camera direction
+float angle = 0.0;
 
 static void init(void)
 {
@@ -129,6 +132,15 @@ static void display(void)
     glVertex3f(-0.8, -0.05, -0.4);
     glEnd();
 
+    //sayap horizontal pesawat
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0.5, 1);
+    glVertex3f(-1.2, -0.05, -0.4);
+    glVertex3f(-1.2, -0.05, 0.2);
+    glVertex3f(-0.8, -0.05, 0.2);
+    glVertex3f(-0.8, -0.05, -0.4);
+    glEnd();
+
     glFlush();
     glutSwapBuffers();
 }
@@ -172,13 +184,41 @@ static void key(unsigned char key, int x, int y)
     glutPostRedisplay();
 }
 
-static void resize (int w, int h)
+static void specialKeys(int key, int xx, int yy)
 {
-   glViewport (0, 0, (GLsizei) w, (GLsizei) h);
-   glMatrixMode (GL_PROJECTION);
-   glLoadIdentity ();
-   glFrustum (-1.0, 1.0, -1.0, 1.0, 2.0, 20.0);
-   glMatrixMode (GL_MODELVIEW);
+
+    float fraction = 0.1f;
+
+    switch (key)
+    {
+        case GLUT_KEY_LEFT:
+            angle -= 0.01f;
+            viewX = sin(angle);
+            viewZ = -cos(angle);
+            break;
+        case GLUT_KEY_RIGHT:
+            angle += 0.01f;
+            viewX = sin(angle);
+            viewZ = -cos(angle);
+            break;
+        case GLUT_KEY_UP:
+            posX += viewX * fraction;
+            posZ += viewZ * fraction;
+            break;
+        case GLUT_KEY_DOWN:
+            posX -= viewX * fraction;
+            posZ -= viewZ * fraction;
+            break;
+    }
+}
+
+static void resize(int w, int h)
+{
+    glViewport(0, 0, (GLsizei)w, (GLsizei)h);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glFrustum(-1.0, 1.0, -1.0, 1.0, 2.0, 20.0);
+    glMatrixMode(GL_MODELVIEW);
 }
 
 static void idle(void)
@@ -191,8 +231,8 @@ static void idle(void)
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
-    glutInitWindowSize(640,640);
-    glutInitWindowPosition(0,0);
+    glutInitWindowSize(640, 640);
+    glutInitWindowPosition(0, 0);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 
     glutCreateWindow("Airplane");
@@ -201,6 +241,7 @@ int main(int argc, char *argv[])
     glutDisplayFunc(display);
     glutReshapeFunc(resize);
     glutKeyboardFunc(key);
+    glutSpecialFunc(specialKeys);
     glutIdleFunc(idle);
 
     glutMainLoop();
