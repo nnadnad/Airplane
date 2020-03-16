@@ -134,32 +134,53 @@ static void display(void)
     glVertex3f(-0.8, -0.07, 0.2);
     glVertex3f(-0.8, -0.02, 0.2);
     glVertex3f(-0.8, -0.02, -0.4);
+    glVertex3f(-1.2, -0.02, -0.4);
+    glVertex3f(-1.2, -0.02, 0.2);
     glEnd();
 
-    //sayap kanan horizontal pesawat
+    //sayap atas horizontal pesawat
+    glBegin(GL_POLYGON);
+    glColor3f(0.5, 1, 1);
+    glVertex3f(0.5, 0.3, -1.2);
+    glVertex3f(0.5, 0.3, 1.0);
+    glVertex3f(0.5, 0.2, 1.0);
+    glVertex3f(0.5, 0.2, -1.2);
+    glVertex3f(0.2, 0.2, -1.2);
+    glVertex3f(0.2, 0.2, 1.0);
+    glVertex3f(0.5, 0.2, 1.0);
+    glVertex3f(0.5, 0.3, 1.0);
+    glVertex3f(0.2, 0.3, 1.0);
+    glVertex3f(0.2, 0.3, -1.2);
+    glEnd();
+
+    //sayap kanan bawah horizontal pesawat
     glBegin(GL_POLYGON);
     glColor3f(1, 0.5, 1);
-    glVertex3f(0.5, 0, 0);
-    glVertex3f(0.5, 0, 1.0);
-    glVertex3f(0.5, -0.1, 1.0);
-    glVertex3f(0.5, -0.1, 0);
-    glVertex3f(0.2, -0.1, 0);
-    glVertex3f(0.2, -0.1, 1.0);
-    glVertex3f(0.2, 0, 1.0);
-    glVertex3f(0.2, 0, 0);
+    glVertex3f(0.5, -0.25, 0);
+    glVertex3f(0.5, -0.25, 1.0);
+    glVertex3f(0.5, -0.30, 1.0);
+    glVertex3f(0.5, -0.30, 0);
+    glVertex3f(0.2, -0.30, 0);
+    glVertex3f(0.2, -0.30, 1.0);
+    glVertex3f(0.5, -0.30, 1.0);
+    glVertex3f(0.5, -0.25, 1.0);
+    glVertex3f(0.2, -0.25, 1.0);
+    glVertex3f(0.2, -0.25, 0);
     glEnd();
 
-    //sayap kiri horizontal pesawat
+    //sayap kiri bawah horizontal pesawat
     glBegin(GL_POLYGON);
     glColor3f(1, 1, 0.5);
-    glVertex3f(0.5, 0, -1.2);
-    glVertex3f(0.5, 0, -0.2);
-    glVertex3f(0.5, -0.1, -0.2);
-    glVertex3f(0.5, -0.1, -1.2);
-    glVertex3f(0.2, -0.1, -1.2);
-    glVertex3f(0.2, -0.1, -0.2);
-    glVertex3f(0.2, 0, -0.2);
-    glVertex3f(0.2, 0, -1.2);
+    glVertex3f(0.5, -0.25, -1.2);
+    glVertex3f(0.5, -0.25, -0.2);
+    glVertex3f(0.5, -0.30, -0.2);
+    glVertex3f(0.5, -0.30, -1.2);
+    glVertex3f(0.2, -0.30, -1.2);
+    glVertex3f(0.2, -0.30, -0.2);
+    glVertex3f(0.5, -0.30, -0.2);
+    glVertex3f(0.5, -0.25, -0.2);
+    glVertex3f(0.2, -0.25, -0.2);
+    glVertex3f(0.2, -0.25, -1.2);
     glEnd();
 
     //baling" vertikal
