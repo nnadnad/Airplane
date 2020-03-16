@@ -25,12 +25,11 @@ static void display(void)
     glTranslatef(0.0f, 0.0f, -10.5f);
 
     gluLookAt(posX, posY, posZ,
-             viewX + cos(rotateXZ * M_PI / 180), viewY, viewZ + sin(rotateXZ * M_PI / 180),
+              viewX + cos(rotateXZ * M_PI / 180), viewY, viewZ + sin(rotateXZ * M_PI / 180),
               upX + cos(rotateXY * M_PI / 180), upY + sin(rotateXY * M_PI / 180), upZ);
 
     glScalef(1.0 + zoom, 1.0 + zoom, 1.0 + zoom);
 
-//body
     //body pesawat di koordinat 0 Z
     glBegin(GL_POLYGON);
     glColor3f(1, 0, 0);

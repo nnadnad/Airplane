@@ -1,14 +1,13 @@
 # depslib dependency file v1.0
-1584352055 source:/Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/main.cpp
-	"2.1.0_1/include/GL/glew.h"
+1584357888 source:/Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/main.cpp
 	<GLUT/glut.h>
-	"2.1.0_1/include/GL/glew.h"
 	<GL/glut.h>
 	<math.h>
 	<stdlib.h>
 	<stdio.h>
-	"glm/glm/glm.hpp"
-	"3.3.2/include/GLFW/glfw3.h"
+	"func.cpp"
+	"model.cpp"
+	"camera.cpp"
 
 1584262523 source:c:\users\lenovo\documents\[informatics]\be grateful\[semester 6]\if3260 - grafika komputer\airplane\main.cpp
 	"2.1.0_1/include/GL/glew.h"
@@ -2323,4 +2322,10 @@
 1584353889 /Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane copy/model.cpp
 
 1584353887 /Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane copy/camera.cpp
+
+1584354454 /Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/func.cpp
+
+1584357948 /Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/model.cpp
+
+1584357950 /Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/camera.cpp
 
