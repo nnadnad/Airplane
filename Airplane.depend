@@ -1,10 +1,14 @@
 # depslib dependency file v1.0
-1584357888 source:/Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/main.cpp
+1584362818 source:/Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/main.cpp
 	<GLUT/glut.h>
 	<GL/glut.h>
 	<math.h>
 	<stdlib.h>
 	<stdio.h>
+	<stdarg.h>
+	<iostream>
+	<fstream>
+	<string>
 	"func.cpp"
 	"model.cpp"
 	"camera.cpp"
@@ -2325,7 +2329,7 @@
 
 1584354454 /Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/func.cpp
 
-1584357948 /Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/model.cpp
+1584362818 /Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/model.cpp
 
-1584357950 /Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/camera.cpp
+1584358011 /Users/yanghansen/Local Document/Kuliah/Semester 6/OpenGL/airplane/camera.cpp
 
