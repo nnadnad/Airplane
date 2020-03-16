@@ -44,9 +44,9 @@ int main(int argc, char *argv[])
     if (argc >= 2) {
         if (argv[1] == "-h" || argv[1] == "--help")
         {
-            printHelp()
+            printHelp();
         } else {
-            cout << "Unknown arguments detected" << endl
+            cout << "Unknown arguments detected" << endl;
         }
     } else {
         glutInit(&argc, argv);
