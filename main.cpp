@@ -126,10 +126,40 @@ static void display(void)
     //ekor horizontal pesawat
     glBegin(GL_POLYGON);
     glColor3f(1, 0.5, 1);
-    glVertex3f(-1.2, -0.05, -0.4);
-    glVertex3f(-1.2, -0.05, 0.2);
-    glVertex3f(-0.8, -0.05, 0.2);
-    glVertex3f(-0.8, -0.05, -0.4);
+    glVertex3f(-1.2, -0.02, -0.4);
+    glVertex3f(-1.2, -0.02, 0.2);
+    glVertex3f(-1.2, -0.07, 0.2);
+    glVertex3f(-1.2, -0.07, -0.4);
+    glVertex3f(-0.8, -0.07, -0.4);
+    glVertex3f(-0.8, -0.07, 0.2);
+    glVertex3f(-0.8, -0.02, 0.2);
+    glVertex3f(-0.8, -0.02, -0.4);
+    glEnd();
+
+    //sayap kanan horizontal pesawat
+    glBegin(GL_POLYGON);
+    glColor3f(1, 0.5, 1);
+    glVertex3f(0.5, 0, 0);
+    glVertex3f(0.5, 0, 1.0);
+    glVertex3f(0.5, -0.1, 1.0);
+    glVertex3f(0.5, -0.1, 0);
+    glVertex3f(0.2, -0.1, 0);
+    glVertex3f(0.2, -0.1, 1.0);
+    glVertex3f(0.2, 0, 1.0);
+    glVertex3f(0.2, 0, 0);
+    glEnd();
+
+    //sayap kiri horizontal pesawat
+    glBegin(GL_POLYGON);
+    glColor3f(1, 1, 0.5);
+    glVertex3f(0.5, 0, -1.2);
+    glVertex3f(0.5, 0, -0.2);
+    glVertex3f(0.5, -0.1, -0.2);
+    glVertex3f(0.5, -0.1, -1.2);
+    glVertex3f(0.2, -0.1, -1.2);
+    glVertex3f(0.2, -0.1, -0.2);
+    glVertex3f(0.2, 0, -0.2);
+    glVertex3f(0.2, 0, -1.2);
     glEnd();
 
     //baling" vertikal
