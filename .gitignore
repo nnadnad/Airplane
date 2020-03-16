@@ -5,3 +5,5 @@
 .idea/
 *.mesh
 .DS_Store
+.cbp
+main.o

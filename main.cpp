@@ -52,6 +52,7 @@ static void display(void)
 
     glScalef(1.0 + zoom, 1.0 + zoom, 1.0 + zoom);
 
+//body
     //body pesawat di koordinat 0 Z
     glBegin(GL_POLYGON);
     glColor3f(1, 0, 0);
@@ -203,6 +204,63 @@ static void display(void)
         glVertex3f(1+i*0.001, -0.025, -0.50);
         glVertex3f(1+i*0.001, -0.025, 0.30);
     }
+    glEnd();
+
+    // roda
+    glBegin(GL_POLYGON);
+    glColor3f(0,0,0);
+    for (int j = 0; j < 50; j++){
+        for (int i=0; i < 359; i++)
+       {
+          float degInRad = i*3.14/180;
+          glVertex3f((cos(degInRad)*0.09)+0.45,(sin(degInRad)*0.09)-0.5,0.2+j*0.002);
+       }
+    }
+
+   glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0,0,0);
+    for (int j = 0; j < 50; j++){
+        for (int i=0; i < 359; i++)
+       {
+          float degInRad = i*3.14/180;
+          glVertex3f((cos(degInRad)*0.09)+0.45,(sin(degInRad)*0.09)-0.5,-0.4-j*0.002);
+       }
+    }
+    glEnd();
+
+   //Sambungan roda
+    glBegin(GL_POLYGON);
+    glColor3f(0.3,0.3,0.3);
+    glVertex3f(0.6,-0.3,0);
+    glVertex3f(0.575,-0.3,0);
+    glVertex3f(0.475,-0.5,0.2);
+    glVertex3f(0.45,-0.5,0.2);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.3,0.3,0.3);
+    glVertex3f(0.3,-0.3,0);
+    glVertex3f(0.325,-0.3,0);
+    glVertex3f(0.475,-0.5,0.2);
+    glVertex3f(0.45,-0.5,0.2);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.3,0.3,0.3);
+    glVertex3f(0.3,-0.3,-0.2);
+    glVertex3f(0.325,-0.3,-0.2);
+    glVertex3f(0.475,-0.5,-0.4);
+    glVertex3f(0.45,-0.5,-0.4);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.3,0.3,0.3);
+    glVertex3f(0.6,-0.3,-0.2);
+    glVertex3f(0.575,-0.3,-0.2);
+    glVertex3f(0.475,-0.5,-0.4);
+    glVertex3f(0.45,-0.5,-0.4);
     glEnd();
 
     glFlush();
