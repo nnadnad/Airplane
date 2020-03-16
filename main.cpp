@@ -52,6 +52,7 @@ static void display(void)
 
     glScalef(1.0 + zoom, 1.0 + zoom, 1.0 + zoom);
 
+//body
     //body pesawat di koordinat 0 Z
     glBegin(GL_POLYGON);
     glColor3f(1, 0, 0);
